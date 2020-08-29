@@ -7,7 +7,27 @@ import TodoList from './components/TodoList';
 
 function App() {
   const [inputText, setInputText] = useState('');
-  const [todos, setTodos] = useState([]);
+
+  //mockup todos data
+  const mockup = [
+    {
+      text: 'Get a breakfast',
+      completed: false,
+      id: 1,
+    },
+    {
+      text: 'Get a coffe',
+      completed: false,
+      id: 2,
+    },
+    {
+      text: 'Program a great app',
+      completed: false,
+      id: 3,
+    },
+  ];
+
+  const [todos, setTodos] = useState(mockup);
 
   return (
     <div>
