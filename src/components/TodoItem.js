@@ -1,13 +1,18 @@
 import React from 'react';
 
-export default function TodoItem({ text }) {
+export default function TodoItem({ text, todo, todos, setTodos }) {
+  //Events
+  const deleteHandler = () => {
+    setTodos(todos.filter((el) => el.id !== todo.id));
+  };
+
   return (
     <div className="todo">
       <li className="todo-item">{text}</li>
       <button className="complete-btn">
         <i className="fas fa-check"></i>
       </button>
-      <button className="trash-btn">
+      <button onClick={deleteHandler} className="trash-btn">
         <i className="fas fa-trash"></i>
       </button>
     </div>
