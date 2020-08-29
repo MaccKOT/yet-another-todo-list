@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, componentDidMount } from 'react';
 import './App.css';
 //import components
 import Header from './components/Header';
@@ -11,7 +11,7 @@ function App() {
   const [status, setStatus] = useState('all');
   const [filteredTodos, setFilteredTodos] = useState([]);
   //mockup todos data
-  const mockup = [
+  let mockup = [
     {
       text: 'Get a breakfast',
       completed: false,
@@ -37,11 +37,7 @@ function App() {
 
   //events
   useEffect(() => {
-    filterHandler(status);
-  }, [status, todos]);
-
-  //events functions
-  const filterHandler = (status) => {
+    //event function
     switch (status) {
       case 'completed':
         setFilteredTodos(todos.filter((todo) => todo.completed === true));
@@ -52,7 +48,9 @@ function App() {
       default:
         setFilteredTodos(todos);
     }
-  };
+    //save to local storage
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }, [status, todos]);
 
   return (
     <div>
