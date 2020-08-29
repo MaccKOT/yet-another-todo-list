@@ -1,5 +1,7 @@
 # [Build A Todo App With REACT | React Project For Beginners](https://www.youtube.com/watch?v=pCA4qpQDZD8)
 
+Original Todo-list App project in vanilla js: [https://github.com/developedbyed/vanilla-todo](https://github.com/developedbyed/vanilla-todo)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
