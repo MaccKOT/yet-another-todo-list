@@ -1,4 +1,4 @@
-import React, { useState, useEffect, componentDidMount } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 //import components
 import Header from './components/Header';
@@ -10,6 +10,7 @@ function App() {
   const [inputText, setInputText] = useState('');
   const [status, setStatus] = useState('all');
   const [filteredTodos, setFilteredTodos] = useState([]);
+
   //mockup todos data
   let mockup = [
     {
@@ -33,6 +34,10 @@ function App() {
       id: 4,
     },
   ];
+  //get todos from local storage
+  if (localStorage.getItem('todos') !== null) {
+    mockup = JSON.parse(localStorage.getItem('todos'));
+  }
   const [todos, setTodos] = useState(mockup);
 
   //events

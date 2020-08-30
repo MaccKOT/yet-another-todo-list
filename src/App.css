@@ -90,7 +90,7 @@ form button:hover {
 /* .fall {
   transform: translateY(10rem) rotateZ(20deg);
   opacity: 0;
-} */
+}  not implemented */
 
 .completed {
   text-decoration: line-through;
@@ -134,6 +134,6 @@ select {
 }
 /* Transition */
 
-.select:hover::after {
+/* .select:hover::after {
   transform: scale(1.5);
-}
+} */
